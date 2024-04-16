@@ -291,7 +291,7 @@ class Project(object):
         
         # System member variables
         if platform.system() == "Windows":
-            self.devkitppc_path = "C:/devkitPro/devkitPPC/bin/"
+            self.devkitppc_path = "C:/Users/[username]/"              #todo find a way to make the path uni so people dont have to edit for there system
             self.codewarrior_path = "C:/Program Files (x86)/Metrowerks/CodeWarrior/PowerPC_EABI_Tools/Command_Line_Tools/"
         else:
             self.devkitppc_path = "/opt/devkitpro/devkitPPC/bin/"
