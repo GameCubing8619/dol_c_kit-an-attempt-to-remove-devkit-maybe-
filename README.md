@@ -1,7 +1,7 @@
 # What is DOL C-Kit?
 DOL C-Kit is a toolkit for compiling C/C++ code (or assembly) using MetroWorksC/C++EmebededPowerPC to inject into a GameCube/Wii \*.dol executable.  It has been written in such a way that it can be adapted to many different games.  You will need [Python 3](https://www.python.org/downloads/) and [DevKitPPC] installed to use it.  As well, DOL C-Kit is dependent on [pyelftools](https://github.com/eliben/pyelftools), JoshuaMK's fork of [dolreader](https://github.com/JoshuaMKW/dolreader), and [geckocode-libs](https://github.com/JoshuaMKW/geckocode-libs).
 
-Uses the metroworks codewarrior compilers assembler and linker for building the dol.Whice also Allows for flags to be passed thru the .exe
+Uses the metroworks codewarrior ((mwcceppc)compilers (mwasmeppc)assembler and (mwldeppc)linker for building the dol.Whice also Allows for flags to be passed thru the .exe
 
 Credit to Yoshi2 And Minty Meeo for creating the original GC C-Kit And dol_c_kit.  DOL C-Kit couldn't exist without it.
 
@@ -16,7 +16,7 @@ The Project class automates the tedious parts of compiling, linking, and injecti
 By shifting forward the stack, db_stack, and OSArenaLo, space for new data can be allocated.  To do this, a patching function modifying a given game's "\_\_init_registers", "OSInit", and "\_\_OSThreadInit" functions must be written.  The project's save_dol function passes two parameters to this patching function: a DolFile class, and the base_addr of your project.
 
 ### Class constructor
-* `Project(self, base_addr=None, verbose=False, compiler=Compiler.DevkitPPC, assembler=Assembler.DevkitPPC, linker=Linker.DevkitPPC)`
+* `Project(self, base_addr=None, verbose=False, compiler=Compiler.CodeWarrior, assembler=Assembler.CodeWarrior, linker=Linker.CodeWarrior`
   * `base_addr` Sets its respective class member.
   * `verbose` Sets its respective class member.
   * `compiler` Enumerated value determining which compiler is used for C/C++.  Currently, Compiler.DevkitPPC and Compiler.CodeWarrior are available.
